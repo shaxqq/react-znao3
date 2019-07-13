@@ -9,6 +9,7 @@ import IconButton from "@material-ui/core/IconButton";
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
+import logo from './logo.jpg'
 // import menuItems from './menuItems';
 
 
@@ -18,10 +19,12 @@ const useStyle = makeStyles(theme =>({
         padding: 0,
     },
     itemlogo: {
-        height: 75
+        height: 88,
+        display: 'flex',
+        justifyContent: 'center',
     },
     item: {
-        height: 30
+        height: 36
     },
     links: {
         textDecoration:'none',
@@ -61,17 +64,18 @@ export default function NavPanel() {
         // Expansion panels
     }
 
-
     const sideList = () => (
         <div>
             <List className={classes.list}>
+
                 <ListItem button className={classes.itemlogo} divider>
-                    <ListItemText primary={'O3'} className={classes.logo}/>
+                    <img src={logo} alt='' />
                 </ListItem>
-                <ListItem button className={classes.item} divider>
+
+                <ListItem button className={classes.item} >
                     <ListItemText primary={'one'}/>
                 </ListItem>
-                <ListItem button onClick={handleClick} className={classes.item} divider id="sub1">
+                <ListItem button onClick={handleClick} className={classes.item}  id="sub1">
                     <ListItemText primary='twoo'/>
                     {open ? <ExpandMore/> : <ExpandLess/>}
                 </ListItem>
@@ -88,10 +92,10 @@ export default function NavPanel() {
                         </ListItem>
                     </List>
                 </Collapse>
-                <ListItem button className={classes.item} divider>
+                <ListItem button className={classes.item} >
                     <ListItemText primary={'three'}/>
                 </ListItem>
-                <ListItem button onClick={handleClick} className={classes.item} divider id="sub2">
+                <ListItem button onClick={handleClick} className={classes.item} id="sub2">
                     <ListItemText primary='twoo'/>
                     {open ? <ExpandMore/> : <ExpandLess/>}
                 </ListItem>
