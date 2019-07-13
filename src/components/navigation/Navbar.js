@@ -7,7 +7,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import NavPanel from "./NavPanel";
 // import MenuBar from './MenuBar'
-import NavButton from  './NavButton';
+import NavButton from './NavButton';
 
 
 const useStyles = makeStyles(theme => ({
