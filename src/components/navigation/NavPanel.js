@@ -9,16 +9,24 @@ import IconButton from "@material-ui/core/IconButton";
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
-import logo from './logo.jpg'
+import logo from './logo.jpg';
+import sidenav from './sidenav.jpg';
+import {NavLink} from 'react-router-dom';
+//
+// import Reglaments from "../content/Reglaments";
+// import {Retention} from '../content/Retention';
+
 // import menuItems from './menuItems';
 
 
-const useStyle = makeStyles(theme =>({
-    list:{
+const useStyle = makeStyles(theme => ({
+    list: {
         width: 250,
         padding: 0,
+        background: 'rgba(225, 240, 255, 0.8)',
+        height: '100%',
     },
-    itemlogo: {
+    item__logo: {
         height: 88,
         display: 'flex',
         justifyContent: 'center',
@@ -27,12 +35,12 @@ const useStyle = makeStyles(theme =>({
         height: 36
     },
     links: {
-        textDecoration:'none',
+        textDecoration: 'none',
     },
     menuHeader: {
         paddingLeft: '30px'
     },
-    logo:{
+    logo: {
         color: '#2196f3',
 
     },
@@ -43,8 +51,18 @@ const useStyle = makeStyles(theme =>({
         paddingLeft: theme.spacing(4),
         height: 30
     },
+    bg__img: {
+        width: '100%',
+        height: '100%',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundImage: `url(${sidenav})`,
+        backgroundRepeat: 'no-repeat',
+    },
+    list__active: {
+        background: 'rgba(0, 0, 0, 0.14)',
+    },
 }));
-
 
 
 export default function NavPanel() {
@@ -65,41 +83,47 @@ export default function NavPanel() {
     }
 
     const sideList = () => (
-        <div>
+        <div className={classes.bg__img}>
             <List className={classes.list}>
 
-                <ListItem button className={classes.itemlogo} divider>
-                    <img src={logo} alt='' />
+                <ListItem button className={classes.item__logo} divider >
+                    <img src={logo} alt=''/>
                 </ListItem>
 
-                <ListItem button className={classes.item} >
-                    <ListItemText primary={'one'}/>
+                <ListItem button className={classes.item} component={NavLink}
+                          to="/reglaments" onClick={togglePanel(false)}>
+                    <ListItemText primary={'Регламенты'}/>
                 </ListItem>
-                <ListItem button onClick={handleClick} className={classes.item}  id="sub1">
-                    <ListItemText primary='twoo'/>
+
+                <ListItem button onClick={handleClick} className={classes.item} id="sub1">
+                    <ListItemText primary='Обучение'/>
                     {open ? <ExpandMore/> : <ExpandLess/>}
                 </ListItem>
-                <Collapse in={open} timeout="auto" unmountOnExit>
+
+                <Collapse in={open} timeout="auto" unmountOnExit className={classes.list__active}>
                     <List component="div" disablePadding>
-                        <ListItem button className={classes.nested} >
-                            <ListItemText primary="One"/>
+
+                        <ListItem button className={classes.nested}  component={NavLink}
+                                  to="/retention" onClick={togglePanel(false)}>
+                            <ListItemText primary="Удержание"/>
                         </ListItem>
-                        <ListItem button className={classes.nested}>
-                            <ListItemText primary="Twoo"/>
+
+                        <ListItem button className={classes.nested} onClick={togglePanel(false)}>
+                            <ListItemText primary="Абон. отдел"/>
                         </ListItem>
-                        <ListItem button className={classes.nested}>
-                            <ListItemText primary="Three"/>
+                        <ListItem button className={classes.nested} onClick={togglePanel(false)}>
+                            <ListItemText primary="Тех. отдел"/>
                         </ListItem>
                     </List>
                 </Collapse>
-                <ListItem button className={classes.item} >
+                <ListItem button className={classes.item} onClick={togglePanel(false)}>
                     <ListItemText primary={'three'}/>
                 </ListItem>
                 <ListItem button onClick={handleClick} className={classes.item} id="sub2">
                     <ListItemText primary='twoo'/>
                     {open ? <ExpandMore/> : <ExpandLess/>}
                 </ListItem>
-                <Collapse in={open} timeout="auto" unmountOnExit>
+                <Collapse in={open} timeout="auto" unmountOnExit className={classes.list__active}>
                     <List component="div" disablePadding>
                         <ListItem button className={classes.nested}>
                             <ListItemText primary="One"/>
@@ -117,18 +141,20 @@ export default function NavPanel() {
         </div>
     );
 
-        return (
-            <div>
-                <IconButton edge="start" className={classes.menuButton} color="inherit"
-                            onClick={togglePanel('left', true)}>
-                    <MenuIcon/>
-                </IconButton>
-                <Drawer open={state.left} onClose={togglePanel('left', false)} className={classes.list}>
-                    {/*{ handler( menuItems.data ) }{ handler( menuItems.data ) }*/}
-                    {sideList('left')}
-                    {/*{menuItems.data}*/}
-                </Drawer>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <IconButton edge="start" className={classes.menuButton} color="inherit"
+                        onClick={togglePanel('left', true)}>
+                <MenuIcon/>
+            </IconButton>
+            <Drawer open={state.left} onClose={togglePanel('left', false)}
+            >
+                {/*{handler(menuItems.data)} {handler(menuItems.data )}*/}
+                {sideList('left')}
+                {/*{menuItems.data}*/}
+            </Drawer>
+
+        </div>
+    )
+}
 

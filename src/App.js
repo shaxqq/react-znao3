@@ -1,16 +1,15 @@
 import React from 'react';
 // import NavButton from './components/NavButton';
 import Navbar from './components/navigation/Navbar';
+import Routes from "./Routes";
 // import NavPanel from './components/NavPanel';
-import Content from './components/content/Content'
+// import Reglaments from './components/content/Reglaments'
 
 function App() {
   return (
       <div>
-        <Navbar />
-        <Content />
-        {/*<NavButton />*/}
-        {/*<NavPanel />*/}
+          <Navbar />
+          <Routes />
       </div>
   );
 }

@@ -24,12 +24,12 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-const Content = () => {
+const Reglaments = () => {
     const classes = useStyles();
     return (
         <Container maxWidth='lg' className={classes.root}>
             <Typography variant='inherit' component='h1' align='center' className={classes.title}>
-                Reglaments
+                Регламенты
             </Typography>
             <Box m={3} className={classes.main}>
                 <Button className={classes.button} variant='contained'>Регламент №1 (Паузы)</Button>
@@ -50,4 +50,4 @@ const Content = () => {
     )
 }
 
-export default Content
+export default (Reglaments)
