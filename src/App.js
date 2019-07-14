@@ -3,7 +3,7 @@ import React from 'react';
 import Navbar from './components/navigation/Navbar';
 import Routes from "./Routes";
 // import NavPanel from './components/NavPanel';
-// import Reglaments from './components/content/Reglaments'
+// import Index from './components/content/Index'
 
 function App() {
   return (

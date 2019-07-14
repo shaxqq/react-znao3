@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Box from "@material-ui/core/Box";
 
 
+
 const useStyles = makeStyles(theme => ({
     title: {
         paddingTop: 20,
@@ -27,12 +28,12 @@ const useStyles = makeStyles(theme => ({
 const Reglaments = () => {
     const classes = useStyles();
     return (
-        <Container maxWidth='lg' className={classes.root}>
+        <Container maxWidth='lg'>
             <Typography variant='inherit' component='h1' align='center' className={classes.title}>
                 Регламенты
             </Typography>
             <Box m={3} className={classes.main}>
-                <Button className={classes.button} variant='contained'>Регламент №1 (Паузы)</Button>
+                <Button className={classes.button} variant='contained' href='reglament1'>Регламент №1 (Паузы)</Button>
                 <Button className={classes.button} variant='contained'>Регламент №2 (Робота старшого зміни та
                     спеціаліста з технічної підтримки)</Button>
                 <Button className={classes.button} variant='contained'>Регламент №3 (Відпочинок і харчування)</Button>

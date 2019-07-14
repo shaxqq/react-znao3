@@ -67,8 +67,7 @@ export default function Navbar() {
     const classes = useStyles();
 
     return(
-        <div>
-            <AppBar position="relative" className={classes.main}>
+            <AppBar position="fixed" className={classes.main}>
                 <Toolbar>
                     {/*<MenuBar/>*/}
                     <NavPanel />
@@ -91,6 +90,5 @@ export default function Navbar() {
                     <NavButton />
                 </Toolbar>
             </AppBar>
-        </div>
     )
 }
