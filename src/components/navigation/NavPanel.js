@@ -12,11 +12,6 @@ import Collapse from '@material-ui/core/Collapse';
 import logo from './logo.jpg';
 import sidenav from './sidenav.jpg';
 import {NavLink} from 'react-router-dom';
-//
-// import Reglaments from "../content/Reglaments";
-// import {Retention} from '../content/Retention';
-
-// import menuItems from './menuItems';
 
 
 const useStyle = makeStyles(theme => ({
