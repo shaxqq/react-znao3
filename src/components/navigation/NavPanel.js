@@ -69,10 +69,9 @@ export default function NavPanel() {
     setState({ state, [side]: open });
   };
 
-  function handleClick() {
+  const handleClick = () => {
     setOpen(!open);
-    // Expansion panels
-  }
+  };
 
   const sideList = () => (
     <div className={classes.bg__img}>
@@ -137,7 +136,12 @@ export default function NavPanel() {
             </ListItem>
           </List>
         </Collapse>
-        <ListItem button className={classes.item} onClick={togglePanel(false)}>
+        <ListItem
+          button
+          className={classes.item}
+          onClick={togglePanel(false)}
+          component="li"
+        >
           <ListItemText primary={"three"} />
         </ListItem>
         <ListItem
@@ -145,6 +149,7 @@ export default function NavPanel() {
           onClick={handleClick}
           className={classes.item}
           id="sub2"
+          component="li"
         >
           <ListItemText primary="twoo" />
           {open ? <ExpandMore /> : <ExpandLess />}
