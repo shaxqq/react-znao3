@@ -21,6 +21,9 @@ const useStyles = makeStyles(theme => ({
         flexDirection: 'column',
         alignItems: 'flex-start',
     },
+    root: {
+        paddingTop: 64,
+    },
 
 }));
 
@@ -28,7 +31,7 @@ const useStyles = makeStyles(theme => ({
 const Reglaments = () => {
     const classes = useStyles();
     return (
-        <Container maxWidth='lg'>
+        <Container maxWidth='lg' className={classes.root}>
             <Typography variant='inherit' component='h1' align='center' className={classes.title}>
                 Регламенты
             </Typography>

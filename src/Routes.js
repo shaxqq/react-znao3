@@ -13,7 +13,7 @@ const Routes = () =>{
             <Redirect
                 exact
                 from="/"
-                to="./components/content/Reglaments"
+                to="/reglaments"
             />
             <Route
                 component={Reglaments}
@@ -29,7 +29,7 @@ const Routes = () =>{
             component={Reglament1}
             exact
             path="/reglament1"
-        />
+            />
         </Switch>
     );
 };

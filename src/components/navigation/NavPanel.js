@@ -80,13 +80,11 @@ export default function NavPanel() {
     const sideList = () => (
         <div className={classes.bg__img}>
             <List className={classes.list}>
-
-                <ListItem button className={classes.item__logo} divider >
+                <ListItem button className={classes.item__logo} divider>
                     <img src={logo} alt=''/>
                 </ListItem>
-
                 <ListItem button className={classes.item} component={NavLink}
-                          to="/reglaments" onClick={togglePanel(false)}>
+                          to="/reglaments" primory='Reglaments' onClick={togglePanel(false)}>
                     <ListItemText primary={'Регламенты'}/>
                 </ListItem>
 
@@ -94,12 +92,11 @@ export default function NavPanel() {
                     <ListItemText primary='Обучение'/>
                     {open ? <ExpandMore/> : <ExpandLess/>}
                 </ListItem>
-
                 <Collapse in={open} timeout="auto" unmountOnExit className={classes.list__active}>
                     <List component="div" disablePadding>
 
-                        <ListItem button className={classes.nested}  component={NavLink}
-                                  to="/retention" onClick={togglePanel(false)}>
+                        <ListItem button className={classes.nested} component={NavLink} to="/retention"
+                                  primory='Retention' onClick={togglePanel(false)}>
                             <ListItemText primary="Удержание"/>
                         </ListItem>
 
@@ -138,8 +135,7 @@ export default function NavPanel() {
 
     return (
         <div>
-            <IconButton edge="start" className={classes.menuButton} color="inherit"
-                        onClick={togglePanel('left', true)}>
+            <IconButton edge="start" className={classes.menuButton} color="inherit" onClick={togglePanel('left', true)}>
                 <MenuIcon/>
             </IconButton>
             <Drawer open={state.left} onClose={togglePanel('left', false)}

@@ -19,6 +19,9 @@ const useStyles = makeStyles(theme => ({
         flexDirection: 'column',
         alignItems: 'flex-start',
     },
+    root: {
+        paddingTop: 64,
+    },
 
 }));
 
