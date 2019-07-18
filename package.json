@@ -33,7 +33,7 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^6.0.1",
+    "eslint": "^5.16.0",
     "husky": "^3.0.0",
     "prettier": "1.18.2",
     "pretty-quick": "^1.11.1"
@@ -45,10 +45,6 @@
     ],
     "*.{js,css,json,md}": [
       "prettier --write",
-      "git add"
-    ],
-    "*.js": [
-      "eslint --fix",
       "git add"
     ]
   },
