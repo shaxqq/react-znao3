@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     }
   }
 }));
-const LoginForm = () => {
+const RegisterForm = () => {
   const classes = useStyles();
   return (
     <DialogContent className={classes.dialog__content}>
@@ -52,7 +52,31 @@ const LoginForm = () => {
         margin="dense"
         variant="outlined"
       />
+      <DialogContentText className={classes.dialog__text}>
+        Ваш пароль
+      </DialogContentText>
+      <TextField
+        id="outlined-password-input"
+        label="Password"
+        className={classes.text__field}
+        type="password"
+        autoComplete="current-password"
+        margin="dense"
+        variant="outlined"
+      />
+      <DialogContentText className={classes.dialog__text}>
+        Ваш пароль
+      </DialogContentText>
+      <TextField
+        id="outlined-password-input"
+        label="Password"
+        className={classes.text__field}
+        type="password"
+        autoComplete="current-password"
+        margin="dense"
+        variant="outlined"
+      />
     </DialogContent>
   );
 };
-export default LoginForm;
+export default RegisterForm;
