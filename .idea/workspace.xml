@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eedc929-c6d1-4d33-ae40-948e192aa5d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/PersonalArea/RegisterForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PersonalArea/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PersonalArea/LoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PersonalArea/RegisterForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PersonalArea/RegisterForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/navigation/NavButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/NavButton.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,12 +20,24 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/navigation/NavButton.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="815">
-              <caret line="109" column="44" selection-start-line="109" selection-start-column="44" selection-end-line="109" selection-end-column="44" />
+            <state relative-caret-position="289">
+              <caret line="129" column="19" lean-forward="true" selection-start-line="129" selection-start-column="19" selection-end-line="129" selection-end-column="19" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
                 <element signature="e#575#621#0" expanded="true" />
-                <element signature="e#711#1745#0" />
+                <element signature="e#831#1898#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/navigation/NavPanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-85">
+              <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -35,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/PersonalArea/LoginForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+            <state relative-caret-position="163">
+              <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -47,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/PersonalArea/RegisterForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1207">
-              <caret line="71" column="8" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
+            <state relative-caret-position="268">
+              <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -101,14 +112,14 @@
         <option value="$PROJECT_DIR$/src/components/navigation/Navbar.js" />
         <option value="$PROJECT_DIR$/src/components/content/reglaments/index.js" />
         <option value="$PROJECT_DIR$/src/components/PersonalArea/LoginForm.js" />
-        <option value="$PROJECT_DIR$/src/components/PersonalArea/RegisterForm.js" />
         <option value="$PROJECT_DIR$/src/components/navigation/NavButton.js" />
+        <option value="$PROJECT_DIR$/src/components/PersonalArea/RegisterForm.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1741" />
-    <option name="y" value="220" />
+    <option name="x" value="1731" />
+    <option name="y" value="193" />
     <option name="width" value="1346" />
     <option name="height" value="670" />
   </component>
@@ -142,13 +153,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="navigation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="znannyao3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="znannyao3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="PersonalArea" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -227,7 +231,9 @@
       <workItem from="1563343949481" duration="8652000" />
       <workItem from="1563355497864" duration="21260000" />
       <workItem from="1563429772642" duration="26024000" />
-      <workItem from="1563689582862" duration="21940000" />
+      <workItem from="1563689582862" duration="22578000" />
+      <workItem from="1563775480570" duration="3874000" />
+      <workItem from="1563783460168" duration="10629000" />
     </task>
     <task id="LOCAL-00001" summary="menu">
       <created>1563000575252</created>
@@ -320,11 +326,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563469638934</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="navigation/reglament/loginform">
+      <created>1563727650932</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1563727650933</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248231000" />
+    <option name="totallyTimeSpent" value="263372000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -336,7 +349,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1741" y="220" width="1346" height="670" extended-state="0" />
+    <frame x="1731" y="193" width="1346" height="670" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25382262" />
@@ -480,13 +493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/navigation/Navlist.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yarn.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2244">
@@ -574,16 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/navigation/Navbar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="51" lean-forward="true" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/content/Retention.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -611,9 +607,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PersonalArea/LoginForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/navigation/Navlist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/navigation/Navbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#491#1536#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/navigation/NavPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-848">
+        <state relative-caret-position="-85">
           <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
@@ -621,20 +645,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PersonalArea/LoginForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PersonalArea/RegisterForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="8" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
+        <state relative-caret-position="268">
+          <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -643,12 +657,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/navigation/NavButton.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="815">
-          <caret line="109" column="44" selection-start-line="109" selection-start-column="44" selection-end-line="109" selection-end-column="44" />
+        <state relative-caret-position="289">
+          <caret line="129" column="19" lean-forward="true" selection-start-line="129" selection-start-column="19" selection-end-line="129" selection-end-column="19" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
             <element signature="e#575#621#0" expanded="true" />
-            <element signature="e#711#1745#0" />
+            <element signature="e#831#1898#0" />
           </folding>
         </state>
       </provider>

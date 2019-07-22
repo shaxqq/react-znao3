@@ -65,10 +65,13 @@ const Transition = forwardRef(function Transition(props, ref) {
 const NavButton = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
-  const [change, setChange] = useState(false);
+  const [change, setChange] = useState({ login: true, register: false });
 
-  function handleChange() {
-    setChange(!change);
+  function changeLoginForm() {
+    setChange({ login: true, register: false });
+  }
+  function changeRegisterForm() {
+    setChange({ login: false, register: true });
   }
 
   function handleClickOpen() {
@@ -77,7 +80,6 @@ const NavButton = () => {
   function handleClose() {
     setOpen(false);
   }
-
   return (
     <div>
       <IconButton
@@ -101,20 +103,21 @@ const NavButton = () => {
           <Button
             variant="contained"
             className={classes.user__button_active}
-            onClick={handleChange}
+            onClick={changeLoginForm}
           >
             Войти
           </Button>
           <Button
             variant="contained"
             className={classes.user__button}
-            onClick={handleChange}
+            onClick={changeRegisterForm}
           >
             Регистрация
           </Button>
         </DialogActions>
 
-        {change ? <RegisterForm /> : <LoginForm />}
+        {change.login && <LoginForm />}
+        {change.register && <RegisterForm />}
 
         <DialogActions className={classes.dialog__end}>
           <Button variant="outlined" className={classes.forgot__button}>

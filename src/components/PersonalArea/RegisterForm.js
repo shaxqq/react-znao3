@@ -28,6 +28,18 @@ const RegisterForm = () => {
   return (
     <DialogContent className={classes.dialog__content}>
       <DialogContentText className={classes.dialog__text}>
+        Ваш логин
+      </DialogContentText>
+      <TextField
+        id="outlined-username-input"
+        label="Username"
+        className={classes.text__field}
+        type="username"
+        autoComplete="current-username"
+        margin="dense"
+        variant="outlined"
+      />
+      <DialogContentText className={classes.dialog__text}>
         Ваш e-mail
       </DialogContentText>
       <TextField
@@ -53,26 +65,14 @@ const RegisterForm = () => {
         variant="outlined"
       />
       <DialogContentText className={classes.dialog__text}>
-        Ваш пароль
+        Повторить пароль
       </DialogContentText>
       <TextField
-        id="outlined-password-input"
+        id="outlined-password-repeat-input"
         label="Password"
         className={classes.text__field}
-        type="password"
-        autoComplete="current-password"
-        margin="dense"
-        variant="outlined"
-      />
-      <DialogContentText className={classes.dialog__text}>
-        Ваш пароль
-      </DialogContentText>
-      <TextField
-        id="outlined-password-input"
-        label="Password"
-        className={classes.text__field}
-        type="password"
-        autoComplete="current-password"
+        type="password-repeat"
+        autoComplete="current-password-repeat"
         margin="dense"
         variant="outlined"
       />
