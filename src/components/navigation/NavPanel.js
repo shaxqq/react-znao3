@@ -12,6 +12,7 @@ import Collapse from "@material-ui/core/Collapse";
 import logo from "./logo.jpg";
 import sidenav from "./sidenav.jpg";
 import { NavLink } from "react-router-dom";
+import menuItems from "./menuItems";
 
 const useStyle = makeStyles(theme => ({
   list: {
@@ -26,7 +27,7 @@ const useStyle = makeStyles(theme => ({
     justifyContent: "center"
   },
   item: {
-    height: 36
+    height: 30
   },
   links: {
     textDecoration: "none"
@@ -69,9 +70,62 @@ export default function NavPanel() {
     setState({ state, [side]: open });
   };
 
-  const handleClick = () => {
-    setOpen(!open);
+  const handleClick = item => {
+    // console.log(open);
+    // console.log(!open[item]);
+    setOpen(open => ({ [item]: !open[item] }));
   };
+
+  const menu = menuItems;
+  const listItems = menu.data.map(subOption => {
+    if (!subOption.children) {
+      return (
+        <ListItem
+          button
+          className={classes.item}
+          component={NavLink}
+          to={subOption.url}
+          primory="Reglaments"
+          key={subOption.id}
+          onClick={togglePanel(false)}
+        >
+          <ListItemText primary={subOption.title} key={subOption.id} />
+        </ListItem>
+      );
+    }
+    const listChild = subOption.children.map(subChild => {
+      return (
+        <ListItem
+          button
+          className={classes.nested}
+          component={NavLink}
+          key={subChild.id}
+          to={subChild.url}
+          onClick={togglePanel(false)}
+        >
+          <ListItemText primary={subChild.title} />
+        </ListItem>
+      );
+    });
+    return (
+      <List component="ul" disablePadding>
+        <ListItem
+          button
+          className={classes.item}
+          component={NavLink}
+          primory={subOption.title}
+          onClick={() => handleClick(subOption.title)}
+          key={subOption.id}
+        >
+          <ListItemText primary={subOption.title} />
+          {open[subOption.title] ? <ExpandLess /> : <ExpandMore />}
+        </ListItem>
+        <Collapse in={open[subOption.title]} className={classes.list__active}>
+          {listChild}
+        </Collapse>
+      </List>
+    );
+  });
 
   const sideList = () => (
     <div className={classes.bg__img}>
@@ -79,99 +133,100 @@ export default function NavPanel() {
         <ListItem button className={classes.item__logo} divider component="li">
           <img src={logo} alt="" />
         </ListItem>
-        <ListItem
-          button
-          className={classes.item}
-          component={NavLink}
-          to="/reglaments"
-          primory="Reglaments"
-          onClick={togglePanel(false)}
-        >
-          <ListItemText primary={"Регламенты"} />
-        </ListItem>
+        {listItems}
+        {/*<ListItem*/}
+        {/*  button*/}
+        {/*  className={classes.item}*/}
+        {/*  component={NavLink}*/}
+        {/*  to="/reglaments"*/}
+        {/*  primory="Reglaments"*/}
+        {/*  onClick={togglePanel(false)}*/}
+        {/*>*/}
+        {/*  <ListItemText primary={"Регламенты"} />*/}
+        {/*</ListItem>*/}
 
-        <ListItem
-          button
-          onClick={handleClick}
-          className={classes.item}
-          id="sub1"
-          component="li"
-        >
-          <ListItemText primary="Обучение" />
-          {open ? <ExpandMore /> : <ExpandLess />}
-        </ListItem>
-        <Collapse
-          in={open}
-          timeout="auto"
-          unmountOnExit
-          className={classes.list__active}
-        >
-          <List component="div" disablePadding>
-            <ListItem
-              button
-              className={classes.nested}
-              component={NavLink}
-              to="/retention"
-              primory="Retention"
-              onClick={togglePanel(false)}
-            >
-              <ListItemText primary="Удержание" />
-            </ListItem>
+        {/*<ListItem*/}
+        {/*  button*/}
+        {/*  onClick={handleClick}*/}
+        {/*  className={classes.item}*/}
+        {/*  id="sub1"*/}
+        {/*  component="ul"*/}
+        {/*>*/}
+        {/*  <ListItemText primary="Обучение" />*/}
+        {/*  {open.id ? <ExpandMore /> : <ExpandLess />}*/}
+        {/*</ListItem>*/}
+        {/*<Collapse*/}
+        {/*  in={open.id}*/}
+        {/*  timeout="auto"*/}
+        {/*  unmountOnExit*/}
+        {/*  className={classes.list__active}*/}
+        {/*>*/}
+        {/*  <List component="ul" disablePadding>*/}
+        {/*    <ListItem*/}
+        {/*      button*/}
+        {/*      className={classes.nested}*/}
+        {/*      component={NavLink}*/}
+        {/*      to="/retention"*/}
+        {/*      primory="Retention"*/}
+        {/*      onClick={togglePanel(false)}*/}
+        {/*    >*/}
+        {/*      <ListItemText primary="Удержание" />*/}
+        {/*    </ListItem>*/}
 
-            <ListItem
-              button
-              className={classes.nested}
-              onClick={togglePanel(false)}
-              component="li"
-            >
-              <ListItemText primary="Абон. отдел" />
-            </ListItem>
-            <ListItem
-              button
-              className={classes.nested}
-              onClick={togglePanel(false)}
-              component="li"
-            >
-              <ListItemText primary="Тех. отдел" />
-            </ListItem>
-          </List>
-        </Collapse>
-        <ListItem
-          button
-          className={classes.item}
-          onClick={togglePanel(false)}
-          component="li"
-        >
-          <ListItemText primary={"three"} />
-        </ListItem>
-        <ListItem
-          button
-          onClick={handleClick}
-          className={classes.item}
-          id="sub2"
-          component="li"
-        >
-          <ListItemText primary="twoo" />
-          {open ? <ExpandMore /> : <ExpandLess />}
-        </ListItem>
-        <Collapse
-          in={open}
-          timeout="auto"
-          unmountOnExit
-          className={classes.list__active}
-        >
-          <List component="div" disablePadding>
-            <ListItem button className={classes.nested}>
-              <ListItemText primary="One" />
-            </ListItem>
-            <ListItem button className={classes.nested}>
-              <ListItemText primary="Twoo" />
-            </ListItem>
-            <ListItem button className={classes.nested}>
-              <ListItemText primary="Three" />
-            </ListItem>
-          </List>
-        </Collapse>
+        {/*    <ListItem*/}
+        {/*      button*/}
+        {/*      className={classes.nested}*/}
+        {/*      onClick={togglePanel(false)}*/}
+        {/*      component="li"*/}
+        {/*    >*/}
+        {/*      <ListItemText primary="Абон. отдел" />*/}
+        {/*    </ListItem>*/}
+        {/*    <ListItem*/}
+        {/*      button*/}
+        {/*      className={classes.nested}*/}
+        {/*      onClick={togglePanel(false)}*/}
+        {/*      component="li"*/}
+        {/*    >*/}
+        {/*      <ListItemText primary="Тех. отдел" />*/}
+        {/*    </ListItem>*/}
+        {/*  </List>*/}
+        {/*</Collapse>*/}
+        {/*<ListItem*/}
+        {/*  button*/}
+        {/*  className={classes.item}*/}
+        {/*  onClick={togglePanel(false)}*/}
+        {/*  component="li"*/}
+        {/*>*/}
+        {/*  <ListItemText primary={"three"} />*/}
+        {/*</ListItem>*/}
+        {/*<ListItem*/}
+        {/*  button*/}
+        {/*  onClick={handleClick}*/}
+        {/*  className={classes.item}*/}
+        {/*  id="sub2"*/}
+        {/*  component="ul"*/}
+        {/*>*/}
+        {/*  <ListItemText primary="twoo" />*/}
+        {/*  {open ? <ExpandMore /> : <ExpandLess />}*/}
+        {/*</ListItem>*/}
+        {/*<Collapse*/}
+        {/*  in={open}*/}
+        {/*  timeout="auto"*/}
+        {/*  unmountOnExit*/}
+        {/*  className={classes.list__active}*/}
+        {/*>*/}
+        {/*  <List component="div" disablePadding>*/}
+        {/*    <ListItem button className={classes.nested}>*/}
+        {/*      <ListItemText primary="One" />*/}
+        {/*    </ListItem>*/}
+        {/*    <ListItem button className={classes.nested}>*/}
+        {/*      <ListItemText primary="Twoo" />*/}
+        {/*    </ListItem>*/}
+        {/*    <ListItem button className={classes.nested}>*/}
+        {/*      <ListItemText primary="Three" />*/}
+        {/*    </ListItem>*/}
+        {/*  </List>*/}
+        {/*</Collapse>*/}
       </List>
     </div>
   );
@@ -187,9 +242,7 @@ export default function NavPanel() {
         <MenuIcon />
       </IconButton>
       <Drawer open={state.left} onClose={togglePanel("left", false)}>
-        {/*{handler(menuItems.data)} {handler(menuItems.data )}*/}
         {sideList("left")}
-        {/*{menuItems.data}*/}
       </Drawer>
     </div>
   );
