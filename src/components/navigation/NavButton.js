@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from "react";
+import React, { useState, forwardRef, useEffect } from "react";
 import IconButton from "@material-ui/core/IconButton";
 import Slide from "@material-ui/core/Slide";
 import AccountCircle from "@material-ui/icons/AccountCircle";
@@ -66,20 +66,25 @@ const NavButton = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [change, setChange] = useState({ login: true, register: false });
+  const [active, setActive] = useState(null);
 
-  function changeLoginForm() {
+  const changeLoginForm = () => {
     setChange({ login: true, register: false });
-  }
-  function changeRegisterForm() {
+  };
+  const changeRegisterForm = () => {
     setChange({ login: false, register: true });
-  }
+  };
 
-  function handleClickOpen() {
+  useEffect(() => {
+    document.button = setActive(active);
+  });
+
+  const handleClickOpen = () => {
     setOpen(true);
-  }
-  function handleClose() {
+  };
+  const handleClose = () => {
     setOpen(false);
-  }
+  };
   return (
     <div>
       <IconButton
@@ -102,7 +107,8 @@ const NavButton = () => {
         <DialogActions className={classes.dialog}>
           <Button
             variant="contained"
-            className={classes.user__button_active}
+            className={classes.user__button}
+            style={{ background: active ? "#33b5e5!important" : null }}
             onClick={changeLoginForm}
           >
             Войти
