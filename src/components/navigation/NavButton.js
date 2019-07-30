@@ -1,4 +1,4 @@
-import React, { useState, forwardRef, useEffect } from "react";
+import React, { useState, forwardRef } from "react";
 import IconButton from "@material-ui/core/IconButton";
 import Slide from "@material-ui/core/Slide";
 import AccountCircle from "@material-ui/icons/AccountCircle";
@@ -66,18 +66,25 @@ const NavButton = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [change, setChange] = useState({ login: true, register: false });
-  const [active, setActive] = useState(null);
+  // const [active, setActive] = useState(false);
 
   const changeLoginForm = () => {
     setChange({ login: true, register: false });
+    if ({ login: true }) {
+      // return(
+      // {style={{background: "#33b5e5!important"}}};
+      // {classes.button}
+      // )
+      // style:{{background: "#33b5e5!important"}}
+    }
   };
   const changeRegisterForm = () => {
     setChange({ login: false, register: true });
   };
 
-  useEffect(() => {
-    document.button = setActive(active);
-  });
+  // const activeButton= () => {
+  //   setActive(!active);
+  // };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -108,7 +115,6 @@ const NavButton = () => {
           <Button
             variant="contained"
             className={classes.user__button}
-            style={{ background: active ? "#33b5e5!important" : null }}
             onClick={changeLoginForm}
           >
             Войти
