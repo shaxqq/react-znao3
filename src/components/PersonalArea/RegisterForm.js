@@ -4,7 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import DialogContent from "@material-ui/core/DialogContent";
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   dialog__content: {
     display: "flex",
     flexDirection: "column"
@@ -40,19 +40,6 @@ const RegisterForm = () => {
         variant="outlined"
       />
       <DialogContentText className={classes.dialog__text}>
-        Ваш e-mail
-      </DialogContentText>
-      <TextField
-        id="outlined-email-input"
-        label="Email"
-        className={classes.text__field}
-        type="email"
-        name="email"
-        autoComplete="email"
-        margin="dense"
-        variant="outlined"
-      />
-      <DialogContentText className={classes.dialog__text}>
         Ваш пароль
       </DialogContentText>
       <TextField
@@ -71,7 +58,7 @@ const RegisterForm = () => {
         id="outlined-password-repeat-input"
         label="Password"
         className={classes.text__field}
-        type="password-repeat"
+        type="password"
         autoComplete="current-password-repeat"
         margin="dense"
         variant="outlined"

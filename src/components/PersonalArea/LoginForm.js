@@ -28,15 +28,14 @@ const LoginForm = () => {
   return (
     <DialogContent className={classes.dialog__content}>
       <DialogContentText className={classes.dialog__text}>
-        Ваш e-mail
+        Ваш логин
       </DialogContentText>
       <TextField
-        id="outlined-email-input"
-        label="Email"
+        id="outlined-username-input"
+        label="Username"
         className={classes.text__field}
-        type="email"
-        name="email"
-        autoComplete="email"
+        type="username"
+        autoComplete="current-username"
         margin="dense"
         variant="outlined"
       />
