@@ -135,7 +135,11 @@ const NavButton = () => {
           <Button variant="outlined" className={classes.forgot__button}>
             Забыли пароль ?
           </Button>
-          <Button variant="contained" className={classes.login__button}>
+          <Button
+            variant="contained"
+            type="submit"
+            className={classes.login__button}
+          >
             Войти
           </Button>
         </DialogActions>

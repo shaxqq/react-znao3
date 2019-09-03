@@ -1,3 +1,5 @@
+import LoginForm from "../src/components/PersonalArea/LoginForm";
+
 const express = require("express");
 const db = require("./database/db");
 
@@ -17,6 +19,11 @@ const port = 3001;
 //
 //
 // app.get = ('/registration', (req, res)=>{res.render('RegisterForm')});
-// app.get = ('/login', (req, res)=>{res.render('LoginForm')});
+const login = LoginForm;
+app.get =
+  ("/login",
+  (req, res) => {
+    res.send(login);
+  });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

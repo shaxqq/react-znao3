@@ -8,7 +8,7 @@ import Retention from "./components/content/Retention";
 const Routes = () => {
   return (
     <Switch>
-      <Redirect exact from="/" to="/reglaments" />
+      {/*<Redirect exact from="/" to="/reglaments" />*/}
       {/*<Redirect*/}
       {/*  exact*/}
       {/*  from="/admin"*/}

@@ -38,6 +38,7 @@ const LoginForm = () => {
         autoComplete="current-username"
         margin="dense"
         variant="outlined"
+        name="username"
       />
       <DialogContentText className={classes.dialog__text}>
         Ваш пароль
@@ -50,6 +51,7 @@ const LoginForm = () => {
         autoComplete="current-password"
         margin="dense"
         variant="outlined"
+        name="password"
       />
     </DialogContent>
   );

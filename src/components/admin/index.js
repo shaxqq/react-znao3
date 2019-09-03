@@ -5,11 +5,14 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Hidden from "@material-ui/core/Hidden";
 import Drawer from "@material-ui/core/Drawer";
-
 import { makeStyles } from "@material-ui/core/styles";
+
 const useStyles = makeStyles(() => ({
   root: {
     display: "flex"
+  },
+  toolbar: {
+    width: 150
   }
 }));
 
@@ -21,15 +24,7 @@ const Admin = () => {
       <div className={classes.toolbar} />
       <Divider />
       <List>
-        {[
-          "Inbox",
-          "Starred",
-          "Send email",
-          "Drafts",
-          "All mail",
-          "Trash",
-          "Spam"
-        ].map((text, index) => (
+        {["Страницы", "Пользователи", "Меню"].map(text => (
           <ListItem button key={text}>
             <ListItemText primary={text} />
           </ListItem>
@@ -38,10 +33,7 @@ const Admin = () => {
     </div>
   );
   return (
-    <nav className={classes.drawer} aria-label="mailbox folders">
-      <Hidden smUp implementation="css">
-        <Drawer variant="temporary">{drawer}</Drawer>
-      </Hidden>
+    <nav aria-label="mailbox folders">
       <Hidden xsDown implementation="css">
         <Drawer variant="permanent" open>
           {drawer}
