@@ -66,7 +66,13 @@ const NavButton = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [change, setChange] = useState({ login: true, register: false });
+  const [login, setLogin] = useState(true);
   // const [active, setActive] = useState(false);
+
+  const admin = () => {
+    console.log(login);
+    setLogin(login);
+  };
 
   const changeLoginForm = () => {
     setChange({ login: true, register: false });
@@ -116,6 +122,7 @@ const NavButton = () => {
             variant="contained"
             className={classes.user__button}
             onClick={changeLoginForm}
+            to="/login"
           >
             Войти
           </Button>
@@ -123,6 +130,7 @@ const NavButton = () => {
             variant="contained"
             className={classes.user__button}
             onClick={changeRegisterForm}
+            to="/register"
           >
             Регистрация
           </Button>
@@ -138,6 +146,7 @@ const NavButton = () => {
           <Button
             variant="contained"
             type="submit"
+            onClick={admin}
             className={classes.login__button}
           >
             Войти

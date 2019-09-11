@@ -11,12 +11,10 @@ const App = () => {
   return (
     <BrowserRouter>
       <Route
-        exact
         path="/"
         component={() => {
           return (
             <div>
-              {" "}
               <Navbar />
               <Routes />
             </div>
@@ -24,7 +22,6 @@ const App = () => {
         }}
       />
       <Route
-        exact
         path="/admin"
         component={() => {
           return <Admin />;

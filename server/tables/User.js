@@ -1,5 +1,4 @@
 const Sequelize = require("sequelize");
-
 const user = {};
 const sequelize = new Sequelize("o3", "sazeke", "aq1sw2de3", {
   host: "localhost",
@@ -19,15 +18,11 @@ user.Sequelize = Sequelize;
 module.exports = user;
 
 const User = user.sequelize.define("user", {
-  name: {
+  username: {
     type: Sequelize.STRING,
     allowNull: false
   },
-  firstPassword: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
-  lastPassword: {
+  password: {
     type: Sequelize.STRING,
     allowNull: false
   }
@@ -40,16 +35,14 @@ User.findAll({ raw: true })
   .catch(err => console.log(err));
 
 // User.create({
-//   name: "Tom",
-//   firstPassword: 'add',
-//   lastPassword: 'add',
+//   username: "Tom",
+//   password: 'add',
 // }).then(res=>{
 //   console.log(res);
 // }).catch(err=>console.log(err));
 // User.create({
-//   name: "Ben",
-//   firstPassword: 'daa',
-//   lastPassword: 'daa',
+//   username: "Ben",
+//   password: 'daa',
 // }).then(res=>{
 //   console.log(res);
 // }).catch(err=>console.log(err));
